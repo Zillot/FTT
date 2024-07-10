@@ -1,0 +1,53 @@
+@import '../../assets/styles/vars-common.scss';
+
+:host {
+    display: block;
+}
+
+.up {
+    color: $color-up;
+}
+
+.down {
+    color: $color-down;
+}
+
+.colorblind {
+    color: black;
+    font-weight: bold;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgb(212, 212, 212);
+    padding: 10px;
+    height: initial !important;
+}
+
+.viewport {
+  height: calc(100vh - 300px);
+  overflow: auto;
+}
+
+.line {
+    height: 30px;
+
+    span {
+        display: inline-block;
+    }
+
+    span:nth-child(1) {
+        width: 180px;
+        margin-right: 10px;
+    }
+
+    span:nth-child(2), span:nth-child(3), span:nth-child(4), span:nth-child(5) {
+        width: 80px;
+        margin-right: 10px;
+    }
+
+    span:nth-child(6) {
+        width: 100px;
+    }
+}

@@ -1,0 +1,21 @@
+<div class="wraper">
+    <div class="header line">
+        <span>Time</span>
+        <span>Peak</span>
+        <span>Enter</span>
+        <span>Exit</span>
+        <span>Lowest</span>
+        <span>Quantity</span>
+    </div>
+
+    <cdk-virtual-scroll-viewport itemSize="10" class="viewport">
+        <div *cdkVirtualFor="let item of candles; let i = index" class="line" [ngClass]="{'up': isUp(item), 'down': isDown(item)}">
+            <span class="colorblind">{{item.time}}</span>
+            <span>{{item.peak}}</span>
+            <span>{{item.enter}}</span>
+            <span>{{item.exit}}</span>
+            <span>{{item.lowest}}</span>
+            <span>{{item.quantity}}</span>
+        </div>
+    </cdk-virtual-scroll-viewport>
+</div>

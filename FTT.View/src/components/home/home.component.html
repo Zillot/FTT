@@ -1,0 +1,31 @@
+<div class="page-container">
+    <div class="container">
+        <button class="btn" (click)="loadData()" [disabled]="lines != null || loading">
+            Load data
+        </button>
+        
+        <div class="filter" [ngClass]="{'disabled': lines == null}">
+            <span>Group by</span>
+            <div class="group-options">
+                <div (click)="groupBy(MarkedDataGroups.second)" [ngClass]="{active: MarkedDataGroups.second == filterSelected}">
+                    Seconds
+                </div>
+                <div (click)="groupBy(MarkedDataGroups.minute)" [ngClass]="{active: MarkedDataGroups.minute == filterSelected}">
+                    Minutes
+                </div>
+                <div (click)="groupBy(MarkedDataGroups.hour)" [ngClass]="{active: MarkedDataGroups.hour == filterSelected}">
+                    Hours
+                </div>
+                <div (click)="groupBy(MarkedDataGroups.day)" [ngClass]="{active: MarkedDataGroups.day == filterSelected}">
+                    Days
+                </div>
+            </div>
+        </div>
+
+        <div class="data-table">
+            <exDataTable [candles]="candles"></exDataTable>
+        </div>
+
+        <isBusy *ngIf="loading"></isBusy>
+    </div>
+</div>
