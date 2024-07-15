@@ -76,6 +76,10 @@ export class MarketLineService {
 
     private generateMarketCandles(groups: { [key: number]: MarketLineDTO[] }, timeFormat: string): MarketCandle[] {
         return Object.values(groups).map(group => {
+            group = group.sort((a, b) => {
+                return a.time.getTime() - b.time.getTime();
+            });
+
             const enter = group[0].price;
             const exit = group[group.length - 1].price;
             const lowest = Math.min(...group.map(line => line.price));
