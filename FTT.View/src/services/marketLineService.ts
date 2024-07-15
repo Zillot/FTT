@@ -30,9 +30,9 @@ export class MarketLineService {
     };
 
     private timeRef: { [key in MarkedDataGroups]: string } = {
-        [MarkedDataGroups.second]: "dd/MM/yyyy hh:mm:ss",
-        [MarkedDataGroups.minute]:"dd/MM/yyyy hh:mm",
-        [MarkedDataGroups.hour]: "dd/MM/yyyy hh:00",
+        [MarkedDataGroups.second]: "dd/MM/yyyy HH:mm:ss",
+        [MarkedDataGroups.minute]:"dd/MM/yyyy HH:mm",
+        [MarkedDataGroups.hour]: "dd/MM/yyyy HH:00",
         [MarkedDataGroups.day]: "dd/MM/yyyy",
     };
 
