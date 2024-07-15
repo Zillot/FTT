@@ -23,12 +23,12 @@ namespace FTT.Bl
             }
 
             var fullSize = chachedLines.Count();
-            var lines = chachedLines.Skip(size * getPageMinusOne(page)).Take(size);
+            var lines = chachedLines.Skip(size * page).Take(size);
 
             return new Page<MarketLine>()
             {
                 elements = lines,
-                hasMore = (size * getPageMinusOne(page) + size) < fullSize,
+                hasMore = (size * page + size) < fullSize,
                 page = page
             };
         }
@@ -50,16 +50,6 @@ namespace FTT.Bl
                 });
 
             return marketList;
-        }
-
-        private int getPageMinusOne(int page)
-        {
-            if (page <= 0)
-            {
-                return 0;
-            }
-
-            return page - 1;
         }
     }
 }
